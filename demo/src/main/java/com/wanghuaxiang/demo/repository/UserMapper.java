@@ -3,6 +3,7 @@ package com.wanghuaxiang.demo.repository;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.wanghuaxiang.demo.bean.User;
 
@@ -13,7 +14,7 @@ import com.wanghuaxiang.demo.bean.User;
  */
 @Mapper
 public interface UserMapper {
-	User findOneUser(String userId);
+	User findOneUser(@Param("userId") String userId);
 
 	List<User> findAllUser();
 }
